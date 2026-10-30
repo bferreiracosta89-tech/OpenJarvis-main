@@ -1,0 +1,18 @@
+# OpenRouter — cloud inference without Ollama
+# Copy to ~/.openjarvis/config.toml, then export/set OPENROUTER_API_KEY.
+# The API key must stay in the environment, not in this file.
+
+[engine]
+default = "cloud"
+
+[intelligence]
+provider = "openrouter"
+default_model = "openrouter/auto"
+temperature = 0.7
+max_tokens = 1024
+
+[agent]
+default_agent = "simple"
+
+[tools]
+enabled = ["calculator", "web_search", "think"]
