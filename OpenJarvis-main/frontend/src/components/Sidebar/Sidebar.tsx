@@ -98,6 +98,7 @@ export function Sidebar() {
       )}
 
       <aside
+        aria-label="Navegação principal"
         className={`
           flex flex-col h-full shrink-0 transition-all duration-200 ease-in-out overflow-hidden
           fixed md:relative z-30
@@ -139,7 +140,7 @@ export function Sidebar() {
                 style={{ color: 'var(--color-text-secondary)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--color-bg-tertiary)')}
                 onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
-                title="New chat"
+                title="Nova conversa"
               >
                 <Plus size={18} />
               </button>
@@ -197,7 +198,7 @@ export function Sidebar() {
               <Search size={14} style={{ color: 'var(--color-text-tertiary)' }} />
               <input
                 type="text"
-                placeholder="Search chats..."
+                placeholder="Buscar conversas..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="flex-1 bg-transparent outline-none text-sm"
@@ -210,7 +211,7 @@ export function Sidebar() {
           <div className="flex-1 overflow-y-auto px-2">
             <div className="px-1 pb-2">
               <div className="flex items-center justify-between px-2 py-1 text-[10px] uppercase tracking-wider" style={{ color: 'var(--color-text-tertiary)' }}>
-                <span>Projects</span>
+                <span>Projetos</span>
                 <button
                   onClick={() => {
                     const name = window.prompt('Nome do projeto');
@@ -228,7 +229,7 @@ export function Sidebar() {
                 className="flex items-center gap-2 w-full px-2 py-1.5 rounded-md text-xs text-left cursor-pointer"
                 style={{ background: !selectedProjectId ? 'var(--color-bg-tertiary)' : 'transparent', color: 'var(--color-text-secondary)' }}
               >
-                <MessageSquare size={13} /> All chats
+                <MessageSquare size={13} /> Todas as conversas
               </button>
               {projects.map((project) => (
                 <button

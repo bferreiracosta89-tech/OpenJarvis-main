@@ -783,3 +783,17 @@
 html[data-font-size="small"] { font-size: 87.5%; }
 html[data-font-size="default"] { font-size: 100%; }
 html[data-font-size="large"] { font-size: 112.5%; }
+
+/* Shared interaction polish for keyboard and pointer users. */
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::placeholder { color: var(--color-text-tertiary); opacity: 0.9; }
+
+@media (max-width: 767px) {
+  .hud-backdrop::before { background-size: 32px 32px; }
+  .hud-backdrop::after { opacity: 0.28; }
+}
